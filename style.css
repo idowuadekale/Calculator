@@ -8,13 +8,51 @@ html {
     padding: 0;
 }
 
+
+/* Beginning code For cursor inside a circle */
+
+.circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+.circle::before {
+    content: "";
+    display: block;
+    width: 35px;
+    height: 35px;
+    border: 1.5px solid #0c1110;
+    border-radius: 50%;
+    background: transparent;
+    transform: translate(-50%, -50%);
+    animation: pulse 300ms ease-in-out alternate infinite
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+@keyframes pulse {
+    from {
+        transform: translate(-50%, -50%) scale(.8);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.5);
+    }
+}
+
+
+/* End of code For cursor inside a circle */
+
 .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-40%, -40%);
     background: #000;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     border-radius: 14px;
     padding-bottom: 20px;
     width: 320px;
@@ -97,13 +135,14 @@ h6 {
 }
 
 .email {
+    letter-spacing: 3px;
     text-align: right;
-    letter-spacing: 2px;
-    font-size: 15px;
     color: #fff;
-    font-family: sans-serif;
-    font-style: italic;
-    font: bolder;
+}
+
+h6,
+.email {
+    line-height: 0.5px;
 }
 
 p {
@@ -117,6 +156,8 @@ p {
 
 a {
     color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 a:hover {
