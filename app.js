@@ -64,3 +64,11 @@ requestAnimationFrame(function render(now) {
 });
 
 //Ending of the code to create a cursor in a circle
+
+// ############################################################################ Preloader/ Spinner
+$(window).on('load', function() {
+    $(".loadingDiv-parent").fadeOut("slow");
+});
+$(window).on('beforeunload', function() {
+    $(".loadingDiv-parent").fadeIn(10);
+});
