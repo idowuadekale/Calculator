@@ -8,8 +8,8 @@ function calcNumbers(result) {
 
 }
 
-function myFunction() {
-    alert("You are going to Idowu Adekale Github");
+function alertBox() {
+    alert("You are going to Idowu Adekale Github 👍");
 }
 
 var myVar = setInterval(myTimer, 1000);

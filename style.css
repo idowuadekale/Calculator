@@ -1,11 +1,16 @@
-                body,
-                html {
-                    background: url(./images/code.jpg);
-                    background-position: absolute;
-                    background-repeat: no-repeat;
-                    background-size: 200%;
+                * {
                     margin: 0;
                     padding: 0;
+                    box-sizing: border-box;
+                }
+                
+                body,
+                html {
+                    background: url(./images/b-image.gif);
+                    background-position: absolute;
+                    background-repeat: no-repeat;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
                 }
                 /* ############################################################################################## LOADING SPINNER */
                 
@@ -74,7 +79,8 @@
                     top: 50%;
                     left: 50%;
                     transform: translate(-40%, -40%);
-                    background: rgb(18, 205, 238);
+                    /* background: rgb(18, 205, 238); */
+                    background: linear-gradient(to bottom, #003366 0%, #0099cc 100%);
                     border-radius: 14px;
                     padding-bottom: 20px;
                     width: 320px;
@@ -83,9 +89,10 @@
                 .display {
                     position: relative;
                     width: 100%;
-                    height: 60px;
+                    height: 100px;
                     padding: 40px 0;
-                    background: #0a887d;
+                    /* background: #0a887d; */
+                    background: linear-gradient(to bottom, #6600ff 0%, #cc66ff 100%);
                     border-top-left-radius: 14px;
                     border-top-right-radius: 14px;
                 }
@@ -107,7 +114,7 @@
                     padding: 0;
                     margin: 5px;
                     box-sizing: border-box;
-                    background: #140558;
+                    background: #333399;
                     border: none;
                     font-size: 30px;
                     line-height: 30px;
@@ -115,6 +122,10 @@
                     font-weight: 700;
                     color: #ddd;
                     cursor: pointer;
+                }
+                
+                input[type=button]:hover {
+                    background: #2a2a7c;
                 }
                 
                 input[type=text] {
@@ -127,26 +138,31 @@
                     background: none;
                     color: #ffffff;
                     text-align: right;
-                    font-weight: 700;
-                    font-size: 60px;
+                    font-weight: 500;
+                    font-size: 25px;
                     line-height: 60px;
                     margin: 0 25px;
                 }
                 
+                .red:hover {
+                    background: #50039e !important;
+                }
+                
                 .red {
-                    background: #700202 !important;
+                    background: #6600cc !important;
                     color: #ffffff !important;
                 }
                 
-                .producer {
+                .header {
                     align-items: center;
                     justify-content: center;
                     text-align: center;
-                    border: 2px solid rgb(8, 73, 158);
+                    border: 2px solid #25252c;
                     border-image: auto;
+                    padding: 20px;
                 }
                 
-                h6 {
+                .header .header-contact h6 {
                     text-align: right;
                     letter-spacing: 2px;
                     font-size: 15px;
@@ -154,41 +170,34 @@
                     font-family: sans-serif;
                     font-style: italic;
                     text-decoration-line: underline;
+                    margin: 2px;
                 }
                 
-                .email {
+                .header .header-contact p {
                     letter-spacing: 1px;
                     text-align: right;
                     color: #fff;
+                    margin: 12px;
                 }
                 
-                .email .email-text {
+                .header .header-contact p .email-text {
                     font-size: 15px;
                     color: aqua;
                 }
                 
-                h6,
-                .email {
-                    line-height: 0.5px;
+                .header .header-contact p a:hover {
+                    color: #ddd;
+                    text-decoration: underline;
                 }
                 
-                p {
-                    /* text-align: right; */
-                    letter-spacing: 1.5px;
-                    font-size: 15px;
-                    color: #fff;
-                    font-family: Arial, Helvetica, sans-serif;
-                    font-style: italic bold;
-                }
-                
-                a {
+                .header .Github a {
                     color: #fff;
                     text-transform: uppercase;
                     text-decoration: none;
                 }
                 
-                a:hover {
-                    color: #000;
+                .header .Github a:hover {
+                    color: #ddd;
                     background: transparent;
                     font-size: bolder;
                 }
@@ -200,72 +209,17 @@
                     margin-top: 15px;
                 }
                 
-                .containerNN {
-                    position: relative;
-                    width: 200px;
-                    max-width: 200px;
-                }
-                
-                .image {
-                    display: relative;
-                    width: 250px;
-                    height: 350px;
-                    border: 1px solid #000;
-                    border-radius: 20px;
-                    -webkit-filter: saturate(0.5);
-                    filter: saturate(2);
-                    margin-left: 30px;
-                }
-                
-                .overlay {
-                    position: absolute;
-                    bottom: 0;
-                    background: rgb(0, 0, 0);
-                    background: rgba(0, 0, 0, 0.5);
-                    /* Black see-through */
-                    color: #f1f1f1;
-                    width: 111%;
-                    transition: .3s ease-in-out;
-                    opacity: 0;
-                    color: white;
-                    font-size: 15px;
-                    height: 100px;
-                    margin-left: 30px;
-                    padding: 15px;
-                    text-align: center;
-                    border: 1px solid #000;
-                    border-radius: 30px;
-                }
-                
-                .containerNN:hover .overlay {
-                    opacity: 1;
-                }
-                
                 @media screen and (max-width: 991px) {
                     .container {
                         margin-top: 5px;
-                    }
-                    .containerNN {
-                        visibility: hidden;
-                    }
-                    .email .email-text {
-                        visibility: hidden;
-                    }
-                    .email a {
-                        font-size: 13px;
-                        color: aqua;
-                        text-transform: none;
-                    }
-                    .email a:hover {
-                        color: aquamarine;
-                        text-transform: uppercase;
-                        font-size: 12px;
                     }
                     h6 {
                         display: none;
                     }
                     body,
                     html {
-                        background: rgb(67, 120, 218);
+                        background-image: linear-gradient(#000099, #6699ff);
+                        background-size: cover;
+                        height: 100%;
                     }
                 }
